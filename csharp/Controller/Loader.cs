@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace PaperVoucher
+namespace uCodeCards
 {
 	/// <summary>
 	/// Class with program entry point.

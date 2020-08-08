@@ -1,4 +1,4 @@
-﻿namespace PaperVoucher
+﻿namespace uCodeCards
 {
 	partial class MainForm
 	{
@@ -48,6 +48,8 @@
 		private System.Windows.Forms.PictureBox pictureBox_loading_icon;
 		private System.Windows.Forms.Timer timer_NetConfirmations;
 		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.TabPage tabPage4;
+		private System.Windows.Forms.Label label8;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -114,6 +116,8 @@
 			this.btn_minimize = new System.Windows.Forms.Button();
 			this.btn_close = new System.Windows.Forms.Button();
 			this.timer_NetConfirmations = new System.Windows.Forms.Timer(this.components);
+			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.label8 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -126,12 +130,14 @@
 			this.panel4.SuspendLayout();
 			this.panel3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox_preview)).BeginInit();
+			this.tabPage4.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabControl1
 			// 
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Controls.Add(this.tabPage4);
 			this.tabControl1.Controls.Add(this.tabPage3);
 			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -210,6 +216,7 @@
 			this.input_token.Name = "input_token";
 			this.input_token.Size = new System.Drawing.Size(238, 27);
 			this.input_token.TabIndex = 10;
+			this.input_token.Text = "11179BFAFBD879FE5B25AC4806917DA6";
 			this.input_token.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// input_port
@@ -219,7 +226,7 @@
 			this.input_port.Name = "input_port";
 			this.input_port.Size = new System.Drawing.Size(238, 27);
 			this.input_port.TabIndex = 11;
-			this.input_port.Text = "22160";
+			this.input_port.Text = "22324";
 			this.input_port.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// label3
@@ -401,7 +408,7 @@
 			this.tabPage3.Name = "tabPage3";
 			this.tabPage3.Size = new System.Drawing.Size(774, 417);
 			this.tabPage3.TabIndex = 2;
-			this.tabPage3.Text = "Step 3: print";
+			this.tabPage3.Text = "Step 4: print";
 			// 
 			// panel_placeholder
 			// 
@@ -518,7 +525,7 @@
 			this.button6.Name = "button6";
 			this.button6.Size = new System.Drawing.Size(184, 52);
 			this.button6.TabIndex = 9;
-			this.button6.Text = "gen voucher";
+			this.button6.Text = "gen card";
 			this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
 			this.button6.UseVisualStyleBackColor = false;
 			this.button6.Click += new System.EventHandler(this.Button6Click);
@@ -536,7 +543,7 @@
 			this.btn_save_file.Name = "btn_save_file";
 			this.btn_save_file.Size = new System.Drawing.Size(184, 52);
 			this.btn_save_file.TabIndex = 9;
-			this.btn_save_file.Text = "save voucher";
+			this.btn_save_file.Text = "save image";
 			this.btn_save_file.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
 			this.btn_save_file.UseVisualStyleBackColor = false;
 			this.btn_save_file.Visible = false;
@@ -555,7 +562,7 @@
 			this.btn_print_voucher.Name = "btn_print_voucher";
 			this.btn_print_voucher.Size = new System.Drawing.Size(184, 52);
 			this.btn_print_voucher.TabIndex = 9;
-			this.btn_print_voucher.Text = "print voucher";
+			this.btn_print_voucher.Text = "print card";
 			this.btn_print_voucher.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
 			this.btn_print_voucher.UseVisualStyleBackColor = false;
 			this.btn_print_voucher.Visible = false;
@@ -610,7 +617,7 @@
 			this.label_step3.Name = "label_step3";
 			this.label_step3.Size = new System.Drawing.Size(774, 65);
 			this.label_step3.TabIndex = 4;
-			this.label_step3.Text = "Step 3: generate and print voucher                 ";
+			this.label_step3.Text = "Step 4: generate and print card   ";
 			this.label_step3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// btn_minimize
@@ -646,6 +653,29 @@
 			this.timer_NetConfirmations.Interval = 300;
 			this.timer_NetConfirmations.Tick += new System.EventHandler(this.Timer_NetConfirmationsTick);
 			// 
+			// tabPage4
+			// 
+			this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+			this.tabPage4.Controls.Add(this.label8);
+			this.tabPage4.Location = new System.Drawing.Point(4, 32);
+			this.tabPage4.Name = "tabPage4";
+			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage4.Size = new System.Drawing.Size(774, 417);
+			this.tabPage4.TabIndex = 3;
+			this.tabPage4.Text = "Step 3: data";
+			// 
+			// label8
+			// 
+			this.label8.Dock = System.Windows.Forms.DockStyle.Top;
+			this.label8.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label8.ForeColor = System.Drawing.Color.MediumSeaGreen;
+			this.label8.Location = new System.Drawing.Point(3, 3);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(768, 65);
+			this.label8.TabIndex = 4;
+			this.label8.Text = "Step 3: enter data";
+			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -677,6 +707,7 @@
 			this.panel4.PerformLayout();
 			this.panel3.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox_preview)).EndInit();
+			this.tabPage4.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}

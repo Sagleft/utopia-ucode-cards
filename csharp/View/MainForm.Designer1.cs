@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PaperVoucher.View {
+namespace uCodeCards.View {
 	using System;
 	
 	
@@ -39,7 +39,7 @@ namespace PaperVoucher.View {
 		internal static global::System.Resources.ResourceManager ResourceManager {
 			get {
 				if (object.ReferenceEquals(resourceMan, null)) {
-					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PaperVoucher.View.MainForm", typeof(MainForm).Assembly);
+					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("uCodeCards.View.MainForm", typeof(MainForm).Assembly);
 					resourceMan = temp;
 				}
 				return resourceMan;
