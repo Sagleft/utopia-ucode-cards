@@ -15,7 +15,7 @@ using ZXing.Common;
 using ZXing.Datamatrix.Encoder;
 using ZXing.QrCode;
 
-namespace PaperVoucher
+namespace uCodeCards
 {
 	/// <summary>
 	/// Description of MainForm.
@@ -160,21 +160,25 @@ namespace PaperVoucher
 			appendLog("I'm trying to connect to a client...");
 			try {
 				client = new UtopiaLib.Client(input_host.Text, port, input_token.Text);
-				decimal balance = client.getBalance();
-				appendLog("Success!");
-				appendLog("Available balance: " + balance.ToString() + " CRP");
-				is_connected = true;
+				//decimal balance = client.getBalance();
+				//appendLog("Success!");
+				//appendLog("Available balance: " + balance.ToString() + " CRP");
+				
+				is_connected = client.checkClientConnection();
+				if(is_connected) {
+					appendLog("Success!");
+				} else {
+					appendLog("Failed to connect");
+				}
 			} catch(Exception ex) {
 				appendLog("Failed to connect: " + ex.Message);
 				is_connected = false;
 			}
-			
-			//renderVoucher("test");
 		}
 		
 		void Button_githubClick(object sender, EventArgs e)
 		{
-			Process.Start("https://github.com/Sagleft/utopia-paper-voucher");
+			Process.Start("https://github.com/Sagleft/utopia-ucode-cards");
 		}
 		
 		void Button6Click(object sender, EventArgs e)
