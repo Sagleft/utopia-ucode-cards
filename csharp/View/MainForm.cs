@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Printing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
@@ -30,7 +31,7 @@ namespace uCodeCards
     	UtopiaLib.Client client;
     	bool is_connected = false;
     	bool is_generated = false;
-    	string voucher_referenceNumber = "";
+    	//string voucher_referenceNumber = "";
 		
 		public MainForm()
 		{
@@ -58,6 +59,9 @@ namespace uCodeCards
 			this.label_step2.MouseMove  += new System.Windows.Forms.MouseEventHandler(this.dragForm);
 			this.label_step3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dragForm);
 			this.label_step3.MouseMove  += new System.Windows.Forms.MouseEventHandler(this.dragForm);
+			
+			listBox_fontcolor.SelectedIndex = 0;
+			listBox_font.SelectedIndex = 1;
 			
 			this.ResumeLayout(false);
 		}
@@ -111,6 +115,17 @@ namespace uCodeCards
 		     return bitmap;
 		}
 		
+		public Bitmap uCodeEncode(string code = "", int size = 256) {
+			string ucode_b64 = client.ucodeEncode(code, size, "BASE64", "PNG");
+			byte[] ucode_bytes = System.Convert.FromBase64String(ucode_b64);
+			Bitmap ucode_bitmap;
+			using (var ms = new MemoryStream(ucode_bytes))
+			{
+			    ucode_bitmap = new Bitmap(ms);
+			}
+			return ucode_bitmap;
+		}
+		
 		void MainFormShown(object sender, EventArgs e)
 		{
 			//find skins
@@ -160,9 +175,6 @@ namespace uCodeCards
 			appendLog("I'm trying to connect to a client...");
 			try {
 				client = new UtopiaLib.Client(input_host.Text, port, input_token.Text);
-				//decimal balance = client.getBalance();
-				//appendLog("Success!");
-				//appendLog("Available balance: " + balance.ToString() + " CRP");
 				
 				is_connected = client.checkClientConnection();
 				if(is_connected) {
@@ -178,6 +190,7 @@ namespace uCodeCards
 		
 		void Button_githubClick(object sender, EventArgs e)
 		{
+			//view source on github
 			Process.Start("https://github.com/Sagleft/utopia-ucode-cards");
 		}
 		
@@ -188,55 +201,17 @@ namespace uCodeCards
 				return;
 			}
 			
-			//if(!is_generated) {
-			//	alert("waiting for network confirmations");
-			//}
-			
-			decimal voucher_amount = 0.1M;
-			NumberStyles decimal_style = NumberStyles.Any;
-			CultureInfo  culture = CultureInfo.CreateSpecificCulture("en-GB");
-			decimal.TryParse(textBox_amount.Text, decimal_style, culture, out voucher_amount);
-			
-			//alert("parsed amount: " + voucher_amount.ToString());
-			//return;
-			
-			//check balance
-			decimal available_balance = 0;
-			try {
-				available_balance = client.getBalance();
-				if(available_balance < voucher_amount) {
-					alert("Not enough balance to create a voucher");
-					return;
-				}
-			} catch(Exception ex) {
-				alert("failed to getbalance: " + ex.Message);
-				return;
-			}
-			
-			//string referenceNumber = "";
-			try {
-				voucher_referenceNumber = client.createVoucher(voucher_amount);
-			} catch(Exception ex) {
-				alert("failed to gen new voucher:" + Environment.NewLine + ex.Message);
-				return;
-			}
-			
-			label_last_voucher.Text = "";
 			is_generated = false;
-			this.SuspendLayout();
-			panel_placeholder.Visible = true;
-			timer_NetConfirmations.Enabled = true;
-			timer_NetConfirmations.Start();
+			renderCard();
 		}
 		
 		void resumeForm() {
 			timer_NetConfirmations.Enabled = false;
 			timer_NetConfirmations.Stop();
-			panel_placeholder.Visible = false;
 			this.ResumeLayout();
 		}
 		
-		void renderVoucher(string voucher_code = "") {
+		void renderCard() {
 			JObject my_profile;
 			try {
 				my_profile = client.getOwnContact();
@@ -244,70 +219,85 @@ namespace uCodeCards
 				alert("failed to get self profile. error: " + ex.Message); return;
 			}
 			
-			int size_fix = 76;
-			string pubkey = my_profile["pk"].ToString();
+			//constants
+			const int x_radius    = 20;
+			const int y_radius    = 20;
+			const int ucode_posX  = 700;
+			const int ucode_posY  = 90;
+			const int ucode_width = 300;
+			const int border_width = 20;
 			
-			Bitmap bmp_qr = data2QR(voucher_code, 215 + size_fix);
+			//prepare skin & canvas
 			string skin_path = wallet_skins[selected_skin_index];
 			Bitmap bmp_skin = new Bitmap(skin_path);
-			Graphics gr = Graphics.FromImage(bmp_skin);
-			gr.DrawImage(bmp_qr, 38, 38);
+			Graphics canvas = Graphics.FromImage(bmp_skin);
 			
-			Bitmap bmp_qr2 = data2QR(pubkey, 199 + size_fix);
-			gr.DrawImage(bmp_qr2, 1316, 176);
+			if(checkBox_addBorder.Checked) {
+				//render uCode background
+				//canvas.draw
+				Rectangle rect = new Rectangle(
+					ucode_posX - border_width,
+					ucode_posY - border_width,
+					ucode_width - border_width,
+					ucode_width - border_width
+				);
+				
+				using (Pen pen = new Pen(Color.White, 5))
+				{
+				    GraphicsPath path = GraphicHelpers.MakeRoundedRect(
+				        rect, x_radius, y_radius, true, true, true, true);
+				    canvas.FillPath(Brushes.White, path);
+				    canvas.DrawPath(pen, path);
+				}
+			}
 			
+			//render uCode
+			string pubkey = my_profile["pk"].ToString();
+			Bitmap bmp_qr = uCodeEncode(pubkey, ucode_width);
+			canvas.DrawImage(bmp_qr, ucode_posX, ucode_posY);
+			
+			//load font
+			System.Drawing.Text.PrivateFontCollection fontCollection = new System.Drawing.Text.PrivateFontCollection();
+ 			//TODO: check fonts exists
+ 			fontCollection.AddFontFile("fonts/Akrobat-" + listBox_font.Items[listBox_font.SelectedIndex] + ".otf");
+ 			Font font_big = new Font(fontCollection.Families[0], 57);
+ 			Font font_medium = new Font(fontCollection.Families[0], 30);
+ 			
+ 			//render data
+ 			Color fontColor = Color.Black;
+ 			SolidBrush drawBrush = new SolidBrush(fontColor);
+ 			switch(listBox_fontcolor.Items[listBox_fontcolor.SelectedIndex].ToString()) {
+ 				case "black":
+ 					fontColor = Color.Black;
+ 					break;
+ 				case "white":
+ 					fontColor = Color.White;
+ 					break;
+ 			}
+ 			drawBrush.Color = fontColor;
+ 			
+ 			canvas.DrawString(card_username.Text, font_big, drawBrush, 87, 87);
+ 			canvas.DrawString(card_userqualifi.Text, font_medium, drawBrush, 90, 180);
+ 			canvas.DrawString(card_contactinfo.Text, font_medium, drawBrush, 90, 280);
+ 			canvas.DrawString(card_userservices.Text, font_medium, drawBrush, 600, 415);
+			
+ 			//set image
 			pictureBox_preview.Image = bmp_skin;
+			is_generated = true;
 		}
 		
 		void showVoucher(string voucher_code = "") {
-			label_last_voucher.Text = voucher_code;
+			//label_last_voucher.Text = voucher_code;
 			is_generated = true;
-			btn_copy_code.Visible = true;
+			//btn_copy_code.Visible = true;
 			btn_print_voucher.Visible = true;
 			btn_save_file.Visible = true;
-		}
-		
-		void Timer_NetConfirmationsTick(object sender, EventArgs e)
-		{
-			JArray financeHistory = new JArray();
-			try {
-				financeHistory = client.getFinanceHistory("CREATED_VOUCHERS", null, voucher_referenceNumber);
-			} catch(Exception ex) {
-				alert("Failed to request voucher creation status: " + ex.Message);
-				resumeForm(); return;
-			}
-			if(financeHistory.Count == 0) {
-				alert("Failed to request voucher creation status");
-				resumeForm(); return;
-			}
-			
-			string voucher_code = "";
-			
-			for(int i=0; i < financeHistory.Count; i++) {
-				JToken finance_item = financeHistory[i];
-				if(finance_item["state"].ToString() == "-1") {
-					//no confirmations founded
-					return;
-				}
-				if(finance_item["state"].ToString() == "0") {
-					//voucher succesfully created
-					//find voucher code
-					string voucher_details = finance_item["details"].ToString();
-					string[] temp = voucher_details.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-					voucher_code = temp[1];
-					break;
-				}
-			}
-			
-			showVoucher(voucher_code);
-			renderVoucher(voucher_code);
-			resumeForm();
 		}
 		
 		void Btn_copy_codeClick(object sender, EventArgs e)
 		{
 			if(is_generated) {
-				Clipboard.SetText(label_last_voucher.Text);
+				//Clipboard.SetText(label_last_voucher.Text);
 			}
 		}
 		

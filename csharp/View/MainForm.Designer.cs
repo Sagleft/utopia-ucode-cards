@@ -29,27 +29,30 @@
 		private System.Windows.Forms.Button btn_skin_prev;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label_step3;
-		private System.Windows.Forms.TextBox textBox_amount;
-		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.PictureBox pictureBox_preview;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Button btn_print_voucher;
-		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Button btn_save_file;
 		private System.Windows.Forms.Button button6;
 		private System.Windows.Forms.Button btn_minimize;
 		private System.Windows.Forms.Button btn_close;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Button btn_copy_code;
-		private System.Windows.Forms.Label label_last_voucher;
-		private System.Windows.Forms.Panel panel_placeholder;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.PictureBox pictureBox_loading_icon;
 		private System.Windows.Forms.Timer timer_NetConfirmations;
-		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.TabPage tabPage4;
 		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.Panel panel5;
+		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.TextBox card_contactinfo;
+		private System.Windows.Forms.TextBox card_username;
+		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.TextBox card_userqualifi;
+		private System.Windows.Forms.Label label14;
+		private System.Windows.Forms.TextBox card_userservices;
+		private System.Windows.Forms.ListBox listBox_fontcolor;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.ListBox listBox_font;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.CheckBox checkBox_addBorder;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -91,46 +94,46 @@
 			this.logbox = new System.Windows.Forms.TextBox();
 			this.label_step1 = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.checkBox_addBorder = new System.Windows.Forms.CheckBox();
+			this.listBox_font = new System.Windows.Forms.ListBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.listBox_fontcolor = new System.Windows.Forms.ListBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.btn_skin_prev = new System.Windows.Forms.Button();
 			this.btn_skin_next = new System.Windows.Forms.Button();
 			this.skin_preview = new System.Windows.Forms.PictureBox();
 			this.label_step2 = new System.Windows.Forms.Label();
+			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.panel5 = new System.Windows.Forms.Panel();
+			this.label14 = new System.Windows.Forms.Label();
+			this.card_userservices = new System.Windows.Forms.TextBox();
+			this.label13 = new System.Windows.Forms.Label();
+			this.card_userqualifi = new System.Windows.Forms.TextBox();
+			this.label12 = new System.Windows.Forms.Label();
+			this.label11 = new System.Windows.Forms.Label();
+			this.card_contactinfo = new System.Windows.Forms.TextBox();
+			this.card_username = new System.Windows.Forms.TextBox();
+			this.label8 = new System.Windows.Forms.Label();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
-			this.panel_placeholder = new System.Windows.Forms.Panel();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.pictureBox_loading_icon = new System.Windows.Forms.PictureBox();
-			this.panel4 = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
-			this.textBox_amount = new System.Windows.Forms.TextBox();
-			this.label9 = new System.Windows.Forms.Label();
-			this.btn_copy_code = new System.Windows.Forms.Button();
+			this.label10 = new System.Windows.Forms.Label();
+			this.pictureBox_preview = new System.Windows.Forms.PictureBox();
 			this.button6 = new System.Windows.Forms.Button();
 			this.btn_save_file = new System.Windows.Forms.Button();
 			this.btn_print_voucher = new System.Windows.Forms.Button();
-			this.panel3 = new System.Windows.Forms.Panel();
-			this.label_last_voucher = new System.Windows.Forms.Label();
-			this.label10 = new System.Windows.Forms.Label();
-			this.pictureBox_preview = new System.Windows.Forms.PictureBox();
 			this.label_step3 = new System.Windows.Forms.Label();
 			this.btn_minimize = new System.Windows.Forms.Button();
 			this.btn_close = new System.Windows.Forms.Button();
 			this.timer_NetConfirmations = new System.Windows.Forms.Timer(this.components);
-			this.tabPage4 = new System.Windows.Forms.TabPage();
-			this.label8 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.skin_preview)).BeginInit();
-			this.tabPage3.SuspendLayout();
-			this.panel_placeholder.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox_loading_icon)).BeginInit();
-			this.panel4.SuspendLayout();
-			this.panel3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox_preview)).BeginInit();
 			this.tabPage4.SuspendLayout();
+			this.panel5.SuspendLayout();
+			this.tabPage3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox_preview)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -216,7 +219,6 @@
 			this.input_token.Name = "input_token";
 			this.input_token.Size = new System.Drawing.Size(238, 27);
 			this.input_token.TabIndex = 10;
-			this.input_token.Text = "11179BFAFBD879FE5B25AC4806917DA6";
 			this.input_token.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// input_port
@@ -327,6 +329,11 @@
 			// tabPage2
 			// 
 			this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+			this.tabPage2.Controls.Add(this.checkBox_addBorder);
+			this.tabPage2.Controls.Add(this.listBox_font);
+			this.tabPage2.Controls.Add(this.label2);
+			this.tabPage2.Controls.Add(this.listBox_fontcolor);
+			this.tabPage2.Controls.Add(this.label1);
 			this.tabPage2.Controls.Add(this.btn_skin_prev);
 			this.tabPage2.Controls.Add(this.btn_skin_next);
 			this.tabPage2.Controls.Add(this.skin_preview);
@@ -338,6 +345,68 @@
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Step 2: design";
 			// 
+			// checkBox_addBorder
+			// 
+			this.checkBox_addBorder.Checked = true;
+			this.checkBox_addBorder.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.checkBox_addBorder.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.checkBox_addBorder.Location = new System.Drawing.Point(556, 225);
+			this.checkBox_addBorder.Name = "checkBox_addBorder";
+			this.checkBox_addBorder.Size = new System.Drawing.Size(213, 38);
+			this.checkBox_addBorder.TabIndex = 20;
+			this.checkBox_addBorder.Text = "add a border around uCode";
+			this.checkBox_addBorder.UseVisualStyleBackColor = true;
+			// 
+			// listBox_font
+			// 
+			this.listBox_font.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+			this.listBox_font.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.listBox_font.ForeColor = System.Drawing.Color.MediumSeaGreen;
+			this.listBox_font.FormattingEnabled = true;
+			this.listBox_font.ItemHeight = 23;
+			this.listBox_font.Items.AddRange(new object[] {
+			"Regular",
+			"Bold"});
+			this.listBox_font.Location = new System.Drawing.Point(589, 165);
+			this.listBox_font.Name = "listBox_font";
+			this.listBox_font.Size = new System.Drawing.Size(138, 48);
+			this.listBox_font.TabIndex = 19;
+			// 
+			// label2
+			// 
+			this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label2.Location = new System.Drawing.Point(589, 143);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(138, 19);
+			this.label2.TabIndex = 18;
+			this.label2.Text = "font weight";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// listBox_fontcolor
+			// 
+			this.listBox_fontcolor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+			this.listBox_fontcolor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.listBox_fontcolor.ForeColor = System.Drawing.Color.MediumSeaGreen;
+			this.listBox_fontcolor.FormattingEnabled = true;
+			this.listBox_fontcolor.ItemHeight = 23;
+			this.listBox_fontcolor.Items.AddRange(new object[] {
+			"white",
+			"black"});
+			this.listBox_fontcolor.Location = new System.Drawing.Point(589, 92);
+			this.listBox_fontcolor.Name = "listBox_fontcolor";
+			this.listBox_fontcolor.Size = new System.Drawing.Size(138, 48);
+			this.listBox_fontcolor.TabIndex = 17;
+			// 
+			// label1
+			// 
+			this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label1.Location = new System.Drawing.Point(589, 71);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(138, 18);
+			this.label1.TabIndex = 16;
+			this.label1.Text = "font color";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// btn_skin_prev
 			// 
 			this.btn_skin_prev.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
@@ -346,7 +415,7 @@
 			this.btn_skin_prev.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.btn_skin_prev.ForeColor = System.Drawing.Color.MediumSeaGreen;
 			this.btn_skin_prev.Image = ((System.Drawing.Image)(resources.GetObject("btn_skin_prev.Image")));
-			this.btn_skin_prev.Location = new System.Drawing.Point(31, 179);
+			this.btn_skin_prev.Location = new System.Drawing.Point(589, 332);
 			this.btn_skin_prev.Name = "btn_skin_prev";
 			this.btn_skin_prev.Size = new System.Drawing.Size(138, 52);
 			this.btn_skin_prev.TabIndex = 6;
@@ -363,7 +432,7 @@
 			this.btn_skin_next.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.btn_skin_next.ForeColor = System.Drawing.Color.MediumSeaGreen;
 			this.btn_skin_next.Image = ((System.Drawing.Image)(resources.GetObject("btn_skin_next.Image")));
-			this.btn_skin_next.Location = new System.Drawing.Point(607, 179);
+			this.btn_skin_next.Location = new System.Drawing.Point(589, 274);
 			this.btn_skin_next.Name = "btn_skin_next";
 			this.btn_skin_next.Size = new System.Drawing.Size(138, 52);
 			this.btn_skin_next.TabIndex = 6;
@@ -374,9 +443,9 @@
 			// 
 			// skin_preview
 			// 
-			this.skin_preview.Location = new System.Drawing.Point(198, 71);
+			this.skin_preview.Location = new System.Drawing.Point(35, 71);
 			this.skin_preview.Name = "skin_preview";
-			this.skin_preview.Size = new System.Drawing.Size(378, 329);
+			this.skin_preview.Size = new System.Drawing.Size(512, 313);
 			this.skin_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.skin_preview.TabIndex = 5;
 			this.skin_preview.TabStop = false;
@@ -393,16 +462,133 @@
 			this.label_step2.Text = "Step 2: design choice";
 			this.label_step2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// tabPage4
+			// 
+			this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+			this.tabPage4.Controls.Add(this.panel5);
+			this.tabPage4.Controls.Add(this.label8);
+			this.tabPage4.Location = new System.Drawing.Point(4, 32);
+			this.tabPage4.Name = "tabPage4";
+			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage4.Size = new System.Drawing.Size(774, 417);
+			this.tabPage4.TabIndex = 3;
+			this.tabPage4.Text = "Step 3: data";
+			// 
+			// panel5
+			// 
+			this.panel5.Controls.Add(this.label14);
+			this.panel5.Controls.Add(this.card_userservices);
+			this.panel5.Controls.Add(this.label13);
+			this.panel5.Controls.Add(this.card_userqualifi);
+			this.panel5.Controls.Add(this.label12);
+			this.panel5.Controls.Add(this.label11);
+			this.panel5.Controls.Add(this.card_contactinfo);
+			this.panel5.Controls.Add(this.card_username);
+			this.panel5.Location = new System.Drawing.Point(154, 87);
+			this.panel5.Name = "panel5";
+			this.panel5.Size = new System.Drawing.Size(474, 293);
+			this.panel5.TabIndex = 15;
+			// 
+			// label14
+			// 
+			this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label14.Location = new System.Drawing.Point(15, 171);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(151, 59);
+			this.label14.TabIndex = 22;
+			this.label14.Text = "user services";
+			this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// card_userservices
+			// 
+			this.card_userservices.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.card_userservices.Location = new System.Drawing.Point(172, 171);
+			this.card_userservices.Multiline = true;
+			this.card_userservices.Name = "card_userservices";
+			this.card_userservices.Size = new System.Drawing.Size(261, 59);
+			this.card_userservices.TabIndex = 21;
+			this.card_userservices.Text = "֍ programming\r\n֍ consultation";
+			// 
+			// label13
+			// 
+			this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label13.Location = new System.Drawing.Point(15, 138);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(151, 27);
+			this.label13.TabIndex = 20;
+			this.label13.Text = "user qualifications";
+			this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// card_userqualifi
+			// 
+			this.card_userqualifi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.card_userqualifi.Location = new System.Drawing.Point(172, 138);
+			this.card_userqualifi.Name = "card_userqualifi";
+			this.card_userqualifi.Size = new System.Drawing.Size(261, 27);
+			this.card_userqualifi.TabIndex = 19;
+			this.card_userqualifi.Text = "anonymous, utopia user";
+			this.card_userqualifi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// label12
+			// 
+			this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label12.Location = new System.Drawing.Point(15, 54);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(151, 78);
+			this.label12.TabIndex = 18;
+			this.label12.Text = "contact info";
+			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// label11
+			// 
+			this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label11.Location = new System.Drawing.Point(15, 21);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(151, 27);
+			this.label11.TabIndex = 17;
+			this.label11.Text = "user name";
+			this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// card_contactinfo
+			// 
+			this.card_contactinfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.card_contactinfo.Location = new System.Drawing.Point(172, 54);
+			this.card_contactinfo.Multiline = true;
+			this.card_contactinfo.Name = "card_contactinfo";
+			this.card_contactinfo.Size = new System.Drawing.Size(261, 78);
+			this.card_contactinfo.TabIndex = 16;
+			this.card_contactinfo.Text = "t.me/username\r\n@username\r\nusername@example.com";
+			// 
+			// card_username
+			// 
+			this.card_username.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.card_username.Location = new System.Drawing.Point(172, 21);
+			this.card_username.Name = "card_username";
+			this.card_username.Size = new System.Drawing.Size(261, 27);
+			this.card_username.TabIndex = 15;
+			this.card_username.Text = "User Name";
+			this.card_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// label8
+			// 
+			this.label8.Dock = System.Windows.Forms.DockStyle.Top;
+			this.label8.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label8.ForeColor = System.Drawing.Color.MediumSeaGreen;
+			this.label8.Location = new System.Drawing.Point(3, 3);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(768, 65);
+			this.label8.TabIndex = 4;
+			this.label8.Text = "Step 3: enter data";
+			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// tabPage3
 			// 
 			this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-			this.tabPage3.Controls.Add(this.panel_placeholder);
-			this.tabPage3.Controls.Add(this.panel4);
-			this.tabPage3.Controls.Add(this.btn_copy_code);
+			this.tabPage3.Controls.Add(this.label10);
+			this.tabPage3.Controls.Add(this.pictureBox_preview);
 			this.tabPage3.Controls.Add(this.button6);
 			this.tabPage3.Controls.Add(this.btn_save_file);
 			this.tabPage3.Controls.Add(this.btn_print_voucher);
-			this.tabPage3.Controls.Add(this.panel3);
 			this.tabPage3.Controls.Add(this.label_step3);
 			this.tabPage3.Location = new System.Drawing.Point(4, 32);
 			this.tabPage3.Name = "tabPage3";
@@ -410,107 +596,24 @@
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Step 4: print";
 			// 
-			// panel_placeholder
+			// label10
 			// 
-			this.panel_placeholder.Controls.Add(this.label7);
-			this.panel_placeholder.Controls.Add(this.label2);
-			this.panel_placeholder.Controls.Add(this.pictureBox_loading_icon);
-			this.panel_placeholder.Location = new System.Drawing.Point(8, 9);
-			this.panel_placeholder.Name = "panel_placeholder";
-			this.panel_placeholder.Size = new System.Drawing.Size(225, 89);
-			this.panel_placeholder.TabIndex = 12;
-			this.panel_placeholder.Visible = false;
+			this.label10.Dock = System.Windows.Forms.DockStyle.Top;
+			this.label10.Location = new System.Drawing.Point(0, 65);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(774, 23);
+			this.label10.TabIndex = 11;
+			this.label10.Text = "Card preview";
+			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// label7
+			// pictureBox_preview
 			// 
-			this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label7.Location = new System.Drawing.Point(3, 59);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(219, 28);
-			this.label7.TabIndex = 1;
-			this.label7.Text = "This may take several minutes";
-			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// label2
-			// 
-			this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label2.Location = new System.Drawing.Point(58, 5);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(155, 51);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "Waiting for network confirmation...";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// pictureBox_loading_icon
-			// 
-			this.pictureBox_loading_icon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_loading_icon.Image")));
-			this.pictureBox_loading_icon.Location = new System.Drawing.Point(3, 5);
-			this.pictureBox_loading_icon.Name = "pictureBox_loading_icon";
-			this.pictureBox_loading_icon.Size = new System.Drawing.Size(49, 51);
-			this.pictureBox_loading_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-			this.pictureBox_loading_icon.TabIndex = 0;
-			this.pictureBox_loading_icon.TabStop = false;
-			// 
-			// panel4
-			// 
-			this.panel4.Controls.Add(this.label1);
-			this.panel4.Controls.Add(this.textBox_amount);
-			this.panel4.Controls.Add(this.label9);
-			this.panel4.Location = new System.Drawing.Point(49, 116);
-			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(392, 97);
-			this.panel4.TabIndex = 10;
-			// 
-			// label1
-			// 
-			this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label1.Location = new System.Drawing.Point(275, 42);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(53, 27);
-			this.label1.TabIndex = 12;
-			this.label1.Text = "CRP";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// textBox_amount
-			// 
-			this.textBox_amount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.textBox_amount.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.textBox_amount.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.textBox_amount.ForeColor = System.Drawing.Color.White;
-			this.textBox_amount.Location = new System.Drawing.Point(65, 44);
-			this.textBox_amount.Name = "textBox_amount";
-			this.textBox_amount.Size = new System.Drawing.Size(204, 23);
-			this.textBox_amount.TabIndex = 11;
-			this.textBox_amount.Text = "0.1";
-			this.textBox_amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// label9
-			// 
-			this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label9.Location = new System.Drawing.Point(17, 15);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(362, 27);
-			this.label9.TabIndex = 8;
-			this.label9.Text = "Voucher amount";
-			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// btn_copy_code
-			// 
-			this.btn_copy_code.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-			this.btn_copy_code.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-			this.btn_copy_code.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btn_copy_code.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.btn_copy_code.ForeColor = System.Drawing.Color.MediumSeaGreen;
-			this.btn_copy_code.Image = ((System.Drawing.Image)(resources.GetObject("btn_copy_code.Image")));
-			this.btn_copy_code.Location = new System.Drawing.Point(257, 256);
-			this.btn_copy_code.Name = "btn_copy_code";
-			this.btn_copy_code.Size = new System.Drawing.Size(184, 52);
-			this.btn_copy_code.TabIndex = 9;
-			this.btn_copy_code.Text = "copy code";
-			this.btn_copy_code.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-			this.btn_copy_code.UseVisualStyleBackColor = true;
-			this.btn_copy_code.Visible = false;
-			this.btn_copy_code.Click += new System.EventHandler(this.Btn_copy_codeClick);
+			this.pictureBox_preview.Location = new System.Drawing.Point(335, 132);
+			this.pictureBox_preview.Name = "pictureBox_preview";
+			this.pictureBox_preview.Size = new System.Drawing.Size(301, 183);
+			this.pictureBox_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox_preview.TabIndex = 10;
+			this.pictureBox_preview.TabStop = false;
 			// 
 			// button6
 			// 
@@ -521,7 +624,7 @@
 			this.button6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.button6.ForeColor = System.Drawing.Color.GreenYellow;
 			this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-			this.button6.Location = new System.Drawing.Point(49, 256);
+			this.button6.Location = new System.Drawing.Point(129, 141);
 			this.button6.Name = "button6";
 			this.button6.Size = new System.Drawing.Size(184, 52);
 			this.button6.TabIndex = 9;
@@ -539,14 +642,13 @@
 			this.btn_save_file.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.btn_save_file.ForeColor = System.Drawing.Color.MediumSeaGreen;
 			this.btn_save_file.Image = ((System.Drawing.Image)(resources.GetObject("btn_save_file.Image")));
-			this.btn_save_file.Location = new System.Drawing.Point(49, 333);
+			this.btn_save_file.Location = new System.Drawing.Point(129, 199);
 			this.btn_save_file.Name = "btn_save_file";
 			this.btn_save_file.Size = new System.Drawing.Size(184, 52);
 			this.btn_save_file.TabIndex = 9;
 			this.btn_save_file.Text = "save image";
 			this.btn_save_file.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
 			this.btn_save_file.UseVisualStyleBackColor = false;
-			this.btn_save_file.Visible = false;
 			this.btn_save_file.Click += new System.EventHandler(this.Btn_save_fileClick);
 			// 
 			// btn_print_voucher
@@ -558,55 +660,14 @@
 			this.btn_print_voucher.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.btn_print_voucher.ForeColor = System.Drawing.Color.MediumSeaGreen;
 			this.btn_print_voucher.Image = ((System.Drawing.Image)(resources.GetObject("btn_print_voucher.Image")));
-			this.btn_print_voucher.Location = new System.Drawing.Point(257, 333);
+			this.btn_print_voucher.Location = new System.Drawing.Point(129, 257);
 			this.btn_print_voucher.Name = "btn_print_voucher";
 			this.btn_print_voucher.Size = new System.Drawing.Size(184, 52);
 			this.btn_print_voucher.TabIndex = 9;
 			this.btn_print_voucher.Text = "print card";
 			this.btn_print_voucher.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
 			this.btn_print_voucher.UseVisualStyleBackColor = false;
-			this.btn_print_voucher.Visible = false;
 			this.btn_print_voucher.Click += new System.EventHandler(this.Btn_print_voucherClick);
-			// 
-			// panel3
-			// 
-			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-			this.panel3.Controls.Add(this.label_last_voucher);
-			this.panel3.Controls.Add(this.label10);
-			this.panel3.Controls.Add(this.pictureBox_preview);
-			this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-			this.panel3.Location = new System.Drawing.Point(467, 65);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(307, 352);
-			this.panel3.TabIndex = 8;
-			// 
-			// label_last_voucher
-			// 
-			this.label_last_voucher.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label_last_voucher.Location = new System.Drawing.Point(0, 212);
-			this.label_last_voucher.Name = "label_last_voucher";
-			this.label_last_voucher.Size = new System.Drawing.Size(307, 140);
-			this.label_last_voucher.TabIndex = 2;
-			this.label_last_voucher.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label10
-			// 
-			this.label10.Dock = System.Windows.Forms.DockStyle.Top;
-			this.label10.Location = new System.Drawing.Point(0, 0);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(307, 23);
-			this.label10.TabIndex = 1;
-			this.label10.Text = "Paper Voucher Preview";
-			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// pictureBox_preview
-			// 
-			this.pictureBox_preview.Location = new System.Drawing.Point(3, 26);
-			this.pictureBox_preview.Name = "pictureBox_preview";
-			this.pictureBox_preview.Size = new System.Drawing.Size(301, 183);
-			this.pictureBox_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox_preview.TabIndex = 0;
-			this.pictureBox_preview.TabStop = false;
 			// 
 			// label_step3
 			// 
@@ -618,7 +679,7 @@
 			this.label_step3.Size = new System.Drawing.Size(774, 65);
 			this.label_step3.TabIndex = 4;
 			this.label_step3.Text = "Step 4: generate and print card   ";
-			this.label_step3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.label_step3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// btn_minimize
 			// 
@@ -651,30 +712,6 @@
 			// timer_NetConfirmations
 			// 
 			this.timer_NetConfirmations.Interval = 300;
-			this.timer_NetConfirmations.Tick += new System.EventHandler(this.Timer_NetConfirmationsTick);
-			// 
-			// tabPage4
-			// 
-			this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-			this.tabPage4.Controls.Add(this.label8);
-			this.tabPage4.Location = new System.Drawing.Point(4, 32);
-			this.tabPage4.Name = "tabPage4";
-			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage4.Size = new System.Drawing.Size(774, 417);
-			this.tabPage4.TabIndex = 3;
-			this.tabPage4.Text = "Step 3: data";
-			// 
-			// label8
-			// 
-			this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-			this.label8.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label8.ForeColor = System.Drawing.Color.MediumSeaGreen;
-			this.label8.Location = new System.Drawing.Point(3, 3);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(768, 65);
-			this.label8.TabIndex = 4;
-			this.label8.Text = "Step 3: enter data";
-			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// MainForm
 			// 
@@ -700,14 +737,11 @@
 			this.panel1.PerformLayout();
 			this.tabPage2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.skin_preview)).EndInit();
-			this.tabPage3.ResumeLayout(false);
-			this.panel_placeholder.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox_loading_icon)).EndInit();
-			this.panel4.ResumeLayout(false);
-			this.panel4.PerformLayout();
-			this.panel3.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox_preview)).EndInit();
 			this.tabPage4.ResumeLayout(false);
+			this.panel5.ResumeLayout(false);
+			this.panel5.PerformLayout();
+			this.tabPage3.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox_preview)).EndInit();
 			this.ResumeLayout(false);
 
 		}

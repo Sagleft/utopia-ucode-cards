@@ -73,16 +73,6 @@ namespace uCodeCards.View {
 		/// <summary>
 		///   Looks up a localized resource of type System.Drawing.Bitmap.
 		/// </summary>
-		internal static System.Drawing.Bitmap btn_copy_code_Image {
-			get {
-				object obj = ResourceManager.GetObject("btn_copy_code.Image", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		/// <summary>
-		///   Looks up a localized resource of type System.Drawing.Bitmap.
-		/// </summary>
 		internal static System.Drawing.Bitmap btn_print_voucher_Image {
 			get {
 				object obj = ResourceManager.GetObject("btn_print_voucher.Image", resourceCulture);
@@ -126,16 +116,6 @@ namespace uCodeCards.View {
 		internal static System.Drawing.Bitmap button6_Image {
 			get {
 				object obj = ResourceManager.GetObject("button6.Image", resourceCulture);
-				return ((System.Drawing.Bitmap)(obj));
-			}
-		}
-		
-		/// <summary>
-		///   Looks up a localized resource of type System.Drawing.Bitmap.
-		/// </summary>
-		internal static System.Drawing.Bitmap pictureBox_loading_icon_Image {
-			get {
-				object obj = ResourceManager.GetObject("pictureBox_loading_icon.Image", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
