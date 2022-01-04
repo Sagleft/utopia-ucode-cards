@@ -14,3 +14,9 @@ Required Libraries:
 * ZXing lib.
 
 Assembly was carried out using [SharpDevelop](http://www.icsharpcode.net/OpenSource/SD/Default.aspx) 4.4.2
+
+---
+
+![image](https://github.com/Sagleft/Sagleft/raw/master/image.png)
+
+### :globe_with_meridians: [Telegram канал](https://t.me/+VIvd8j6xvm9iMzhi)
